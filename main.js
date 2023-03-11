@@ -4,10 +4,10 @@ const app = express()
 app.get("/vidTest", (req, res) => {
     const referer = req.headers.referer;
         
-    if(referer && referer.includes("vid-test")){
+    if(referer && referer.includes("vid")){
         res.sendFile(__dirname + "/public/vidTest.mp4");
     } else {
-        res.sendStatus(403).send("forbidden access.");
+        res.sendStatus(403);
     }
 });
 
